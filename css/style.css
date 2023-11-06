@@ -10555,3 +10555,7 @@ textarea.form-control {
   color: #ff0000 !important;
   font-weight: normal !important;
  }
+ .testimony-wrap .text{
+    height: 208px;
+    overflow-y: scroll;
+ }

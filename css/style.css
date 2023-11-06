@@ -10559,3 +10559,7 @@ textarea.form-control {
     height: 208px;
     overflow-y: scroll;
  }
+.place-card-large {
+  padding: 9px 4px 9px 11px;
+  display: none !important;
+}

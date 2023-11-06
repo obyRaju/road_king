@@ -10550,3 +10550,8 @@ textarea.form-control {
       margin-right: -8px;
       margin-bottom: -4px;
     }
+/* erro class styling */
+.error { 
+  color: #ff0000 !important;
+  font-weight: normal !important;
+ }

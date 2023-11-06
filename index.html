@@ -19,6 +19,7 @@
 
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/toast.min.css">
 </head>
 
 <body>
@@ -69,13 +70,14 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="search-wrap-1 ftco-animate p-4">
-						<form action="#" class="search-property-1">
+						<form class="search-property-1" id="bookingForm" name="bookingForm">
 							<div class="row">
 								<div class="col-lg align-items-end">
 									<div class="form-group">
 										<label for="#">Name</label>
 										<div class="form-field">
-											<input type="text" class="form-control" placeholder="Enter Name">
+											<input type="text" class="form-control" placeholder="Enter Name" name="name"
+												required>
 										</div>
 									</div>
 								</div>
@@ -83,7 +85,8 @@
 									<div class="form-group">
 										<label for="#">Phone</label>
 										<div class="form-field">
-											<input type="text" class="form-control" placeholder="Phone">
+											<input type="text" class="form-control" placeholder="Phone" name="phone"
+												required>
 										</div>
 									</div>
 								</div>
@@ -91,7 +94,8 @@
 									<div class="form-group">
 										<label for="#">Location</label>
 										<div class="form-field">
-											<input type="text" class="form-control" placeholder="Location">
+											<input type="text" class="form-control" placeholder="Location"
+												name="location">
 										</div>
 									</div>
 								</div>
@@ -99,14 +103,16 @@
 									<div class="form-group">
 										<label for="#">Message</label>
 										<div class="form-field">
-											<input type="text" class="form-control" placeholder="Message">
+											<input type="text" class="form-control" placeholder="Message" name="message"
+												required>
 										</div>
 									</div>
 								</div>
 								<div class="col-lg align-self-end">
 									<div class="form-group">
 										<div class="form-field">
-											<input type="submit" value="Book Now" class="form-control btn btn-primary">
+											<input type="submit" value="Book Now" class="form-control btn btn-primary"
+												onclick="bookNow()" id="booking">
 										</div>
 									</div>
 								</div>
@@ -254,7 +260,8 @@
 							<div class="testimony-wrap py-4">
 								<div class="text">
 									<span class="fa fa-quote-left"></span>
-									<p class="mb-4">Had an amazing drive with Safe Limo service today… Felt very safe and smooth</p>
+									<p class="mb-4">Had an amazing drive with Safe Limo service today… Felt very safe
+										and smooth</p>
 									<!-- <div class="d-flex align-items-center">
 										<div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
 										<div class="pl-3">
@@ -269,7 +276,8 @@
 							<div class="testimony-wrap py-4">
 								<div class="text">
 									<span class="fa fa-quote-left"></span>
-									<p class="mb-4">One, Mr. Salim, was our chauffeur today, an experienced professional and friendly chauffeur.</p>
+									<p class="mb-4">One, Mr. Salim, was our chauffeur today, an experienced professional
+										and friendly chauffeur.</p>
 									<!-- <div class="d-flex align-items-center">
 										<div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
 										<div class="pl-3">
@@ -284,7 +292,12 @@
 							<div class="testimony-wrap py-4">
 								<div class="text">
 									<span class="fa fa-quote-left"></span>
-									<p class="mb-4">My wife and 9-year-old daughter had to travel from Saudi to Qatar during the night. Due to their good reviews, I contacted Safe Limo via WhatsApp considering my worries, they immediately shared the driver's name and contact details. Mr. Arif was very kind and made it safer for us.Thank you, safe Limo, for your prompt and friendly ride. Looking forward to more rides with Safe Limo.</p>
+									<p class="mb-4">My wife and 9-year-old daughter had to travel from Saudi to Qatar
+										during the night. Due to their good reviews, I contacted Safe Limo via WhatsApp
+										considering my worries, they immediately shared the driver's name and contact
+										details. Mr. Arif was very kind and made it safer for us.Thank you, safe Limo,
+										for your prompt and friendly ride. Looking forward to more rides with Safe Limo.
+									</p>
 									<!-- <div class="d-flex align-items-center">
 										<div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
 										<div class="pl-3">
@@ -299,7 +312,8 @@
 							<div class="testimony-wrap py-4">
 								<div class="text">
 									<span class="fa fa-quote-left"></span>
-									<p class="mb-4">Had a ride at reasonable rates with Safe Limo. Will definitely contact you again for more jaunts.</p>
+									<p class="mb-4">Had a ride at reasonable rates with Safe Limo. Will definitely
+										contact you again for more jaunts.</p>
 									<!-- <div class="d-flex align-items-center">
 										<div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
 										<div class="pl-3">
@@ -345,19 +359,19 @@
 					<div class="form-group">
 						<label for="#">Name</label>
 						<div class="form-field">
-							<input type="text" class="form-control" placeholder="Enter Name">
+							<input type="text" class="form-control" placeholder="Enter Name" required>
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="#">Email</label>
 						<div class="form-field">
-							<input type="text" class="form-control" placeholder="Email">
+							<input type="Email" class="form-control" placeholder="Email" required>
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="#">Phone</label>
 						<div class="form-field">
-							<input type="text" class="form-control" placeholder="Phone">
+							<input type="text" class="form-control" name="Phone" placeholder="Phone" required>
 						</div>
 					</div>
 				</div>
@@ -365,7 +379,7 @@
 					<div class="form-group">
 						<label for="#">Message</label>
 						<div class="form-field">
-							<textarea class="form-control" rows="9"></textarea>
+							<textarea class="form-control" rows="9" name="Msg" required></textarea>
 						</div>
 					</div>
 				</div>
@@ -382,11 +396,10 @@
 		</div>
 	</section>
 
-	 <div id='whatsapp-chat' class='hide'>
+	<div id='whatsapp-chat' class='hide'>
 		<div class='header-chat'>
 			<div class='head-home'>
-				<div class='info-avatar'><img
-						src='' /></div>
+				<div class='info-avatar'><img src='' /></div>
 				<p><span class="whatsapp-name">Road King</span><br><small>Available</small></p>
 
 			</div>
@@ -497,11 +510,11 @@
 
 
 	<!-- loader -->
-	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+	<!-- <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
 			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
 			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
 				stroke="#F96D00" />
-		</svg></div>
+		</svg></div> -->
 
 
 	<script src="js/jquery.min.js"></script>
@@ -514,11 +527,13 @@
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/jquery.animateNumber.min.js"></script>
+	<script src="js/jquery.validate.js"></script>
 	<script src="js/scrollax.min.js"></script>
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 	<script src="js/google-map.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/toast.min.js"></script>
 	<script type='text/javascript'>
 		$(window).load(function () {
 			$("#ftco-nav li").click(function () {
@@ -587,6 +602,33 @@
 			$(document).on("click", ".blantershow-chat", function () {
 				$("#whatsapp-chat").addClass("show").removeClass("hide");
 			});
+		function bookNow() {
+			$("form[name='bookingForm']").validate({
+				submitHandler: function (form) {
+					let formData = $('#bookingForm').serialize();
+					$.ajax({
+						type: "POST",
+						url: "Booking.php",
+						dataType: 'json',
+						data: formData, // serializes the form's elements.
+						success: function (data) {
+							$.toast({
+								title: data.status,
+								subtitle: '',
+								content: data.message,
+								type: data.type,
+								delay: 6000,
+								dismissible: true,
+							});
+							//alert(data); // show response from the php script.
+						}
+					});
+				}
+			})
+		}
+		$(document).on('hidden.bs.toast', '.toast', function (e) {
+			$(this).remove();
+		});
 	</script>
 </body>
 

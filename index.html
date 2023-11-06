@@ -37,7 +37,7 @@
 					<li class="nav-item home active"><a href="#home" class="nav-link">Home</a></li>
 					<li class="nav-item aboutus"><a href="#aboutus" class="nav-link">About</a></li>
 					<li class="nav-item review"><a href="#review" class="nav-link">Review</a></li>
-					<li class="nav-item contact-us"><a href="#contact-us" class="nav-link">Contact</a></li>
+					<li class="nav-item contact-us"><a href="./contact_us.html" class="nav-link">Contact</a></li>
 				</ul>
 			</div>
 		</div>
@@ -184,6 +184,7 @@
 					leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
 					with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
 					publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+					<p><a href="./about_us.html" class="btn btn-primary py-3 px-4">Read More...</a></p>
 			</div>
 		</div>
 	</section>
@@ -354,44 +355,47 @@
 					<h2 class="mb-2">Let's Start a Conversation</h2>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<div class="form-group">
-						<label for="#">Name</label>
-						<div class="form-field">
-							<input type="text" class="form-control" placeholder="Enter Name" required>
+			<form id="contact-form" name="contact-form" id="contact-form">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="#">Name</label>
+							<div class="form-field">
+								<input type="text" class="form-control" placeholder="Enter Name" name="name" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="#">Email</label>
+							<div class="form-field">
+								<input type="Email" class="form-control" placeholder="Email" name="email" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="#">Phone</label>
+							<div class="form-field">
+								<input type="text" class="form-control" name="Phone_number" placeholder="Phone"
+									required>
+							</div>
 						</div>
 					</div>
-					<div class="form-group">
-						<label for="#">Email</label>
-						<div class="form-field">
-							<input type="Email" class="form-control" placeholder="Email" required>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="#">Message</label>
+							<div class="form-field">
+								<textarea class="form-control" rows="9" name="Msg" required></textarea>
+							</div>
 						</div>
 					</div>
-					<div class="form-group">
-						<label for="#">Phone</label>
-						<div class="form-field">
-							<input type="text" class="form-control" name="Phone" placeholder="Phone" required>
+					<div class="col-lg">
+						<div class="form-group float-right" style="width: 150px;">
+							<div class="form-field">
+								<input type="submit" value="Send Message" class="form-control btn btn-primary"
+									onclick="contactUs()">
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6">
-					<div class="form-group">
-						<label for="#">Message</label>
-						<div class="form-field">
-							<textarea class="form-control" rows="9" name="Msg" required></textarea>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg">
-					<div class="form-group float-right" style="width: 150px;">
-						<div class="form-field">
-							<input type="submit" value="Send Message" class="form-control btn btn-primary">
-						</div>
-					</div>
-				</div>
-			</div>
-
+			</form>
 		</div>
 		</div>
 	</section>
@@ -629,6 +633,45 @@
 		$(document).on('hidden.bs.toast', '.toast', function (e) {
 			$(this).remove();
 		});
+		function contactUs() {
+			$("form[name='contact-form']").validate({
+				rules: {
+					name: {
+						required: true,
+					},
+					Phone_number: {
+						required: true,
+					},
+					Msg: {
+						required: true,
+					},
+					email: {
+						required: true,
+						email: true
+					}
+				},
+				submitHandler: function (form) {
+					let formData = $('#contact-form').serialize();
+					$.ajax({
+						type: "POST",
+						url: "contact.php",
+						dataType: 'json',
+						data: formData, // serializes the form's elements.
+						success: function (data) {
+							$.toast({
+								title: data.status,
+								subtitle: '',
+								content: data.message,
+								type: data.type,
+								delay: 6000,
+								dismissible: true,
+							});
+							//alert(data); // show response from the php script.
+						}
+					});
+				}
+			});
+		}
 	</script>
 </body>
 

@@ -22,17 +22,17 @@ $emailBody = "";
  $mail->isSMTP();                                      // Set mailer to use SMTP
  $mail->Host = 'in-v3.mailjet.com';  // Specify main and backup SMTP servers
  $mail->SMTPAuth = true;                               // Enable SMTP authentication
- $mail->Username = 'b925f3523b855aa9dd55bd40aacf9343';                 // SMTP username
- $mail->Password = '47bb7cf81b7aa9e99d46361e60993db7';                           // SMTP password
+ $mail->Username = '2862fcc22d1dbfff2d2543bafad0aa28';                 // SMTP username
+ $mail->Password = 'b6aa2b7dc25a3923af6d5a67f98d9692';                           // SMTP password
  $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
  $mail->Port = 587;                                    // TCP port to connect to
 
  $mail->From = 'oby@alignminds.com';
  $mail->FromName = 'Oby';
  $mail->addAddress('obyraju@gmail.com', 'oby');     // Add a recipient
- $mail->addReplyTo('oby@alignminds.com', 'Information');
- $mail->addCC('oby@alignminds.com');
- $mail->addBCC('oby@alignminds.com');
+ $mail->addReplyTo('support@safelimogcc.com', 'Safe limo');
+ $mail->addCC('support@safelimogcc.com');
+ $mail->addBCC('support@safelimogcc.com');
 
  $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
  $mail->isHTML(true);                                  // Set email format to HTML
